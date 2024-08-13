@@ -1,0 +1,5 @@
+function separateNumbers(s) {
+    
+
+    
+}
