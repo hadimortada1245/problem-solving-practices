@@ -1,8 +1,20 @@
 function twoArrays(k, A, B) {
-    A=A.reverse();
-    B=B.reverse();
-    for(let i=0;i<A.length;i++)
-        if(A[i]+B[i]<k)return "NO"
-    return "YES";
+    let i = 0;
+    A.sort((a,b)=>a-b);
+    B.sort((a,b)=>b-a);
+    while (i<A.length){
+        let j=i;
+        let boo=false;
+        while(j<B.length)
+            {
+            if(A[i]+B[j]>=k){
+                boo=true;
+                break
+            }else j++;
+           }
+        if(!boo)return "NO";
+        i++;
+    }
+return "YES";
 }
-console.log(twoArrays(1,[0,1],[0,2]));
+console.log(twoArrays(5, [1,2,2,1], [3,3,3,4]));
