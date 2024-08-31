@@ -1,0 +1,4 @@
+function superDigit(n, k) {
+    
+
+}
