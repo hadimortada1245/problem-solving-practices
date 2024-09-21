@@ -1,19 +1,9 @@
 function kangaroo(x1, v1, x2, v2) {
-    if(v1==v2 && x1!=x2)return "NO";
-    if (x1==x2)return "YES";
-   else if(x1<x2){
-        while(x1<x2){
-            x1+=v1;
-            x2+=v2;
-            if(x1==x2)return "Yes";
-        }return "NO";
-    }
-    while(x2<x1){
-        x1+=v1;
-        x2+=v2;
-        if(x1==x2)return "Yes";
-    }return "NO";
     
-   
+    if (v1 == v2) return x1 == x2 ? "YES" : "NO";
+     
+    let n = (x2 - x1) / (v1 - v2);
+
+    return n > 0 && Number.isInteger(n) ? "YES" : "NO";
 }
-console.log(kangaroo(0,2,5, 3));
+console.log(kangaroo(21, 6 ,47, 3));
